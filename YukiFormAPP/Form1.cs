@@ -44,7 +44,7 @@ namespace YukiFormAPP
 
         private void label1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("YukiAPP Test Ver 0.2." +
+            MessageBox.Show("YukiAPP Test Ver 0.3." +
                 "©By Hisaki Koike");
         }
 

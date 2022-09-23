@@ -31,17 +31,17 @@ namespace YukiFormAPP
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Clock.exe");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Desktop", new System.Windows.Forms.TreeNode[] {
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Hisaki", new System.Windows.Forms.TreeNode[] {
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("$HOME", new System.Windows.Forms.TreeNode[] {
-            treeNode23});
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Clock.exe");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Desktop", new System.Windows.Forms.TreeNode[] {
+            treeNode37});
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Hisaki", new System.Windows.Forms.TreeNode[] {
+            treeNode38});
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("$HOME", new System.Windows.Forms.TreeNode[] {
+            treeNode39});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -73,10 +73,17 @@ namespace YukiFormAPP
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.名前を付けて保存 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
@@ -196,21 +203,21 @@ namespace YukiFormAPP
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea10.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chart1.Legends.Add(legend10);
             this.chart1.Location = new System.Drawing.Point(3, 243);
             this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart1.Series.Add(series6);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "chart1";
-            title6.Name = "売上";
-            this.chart1.Titles.Add(title6);
+            title10.Name = "売上";
+            this.chart1.Titles.Add(title10);
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // Memo
@@ -233,16 +240,16 @@ namespace YukiFormAPP
             // 
             this.treeView1.Location = new System.Drawing.Point(212, 68);
             this.treeView1.Name = "treeView1";
-            treeNode21.Name = "ノード11";
-            treeNode21.Text = "Clock.exe";
-            treeNode22.Name = "ノード8";
-            treeNode22.Text = "Desktop";
-            treeNode23.Name = "ノード7";
-            treeNode23.Text = "Hisaki";
-            treeNode24.Name = "ノード0";
-            treeNode24.Text = "$HOME";
+            treeNode37.Name = "ノード11";
+            treeNode37.Text = "Clock.exe";
+            treeNode38.Name = "ノード8";
+            treeNode38.Text = "Desktop";
+            treeNode39.Name = "ノード7";
+            treeNode39.Text = "Hisaki";
+            treeNode40.Name = "ノード0";
+            treeNode40.Text = "$HOME";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode24});
+            treeNode40});
             this.treeView1.Size = new System.Drawing.Size(121, 97);
             this.treeView1.TabIndex = 18;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -274,9 +281,13 @@ namespace YukiFormAPP
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(200, 100);
             this.tabControl1.TabIndex = 21;
+            this.tabControl1.Tag = "File";
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.名前を付けて保存);
+            this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -287,6 +298,8 @@ namespace YukiFormAPP
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -380,9 +393,9 @@ namespace YukiFormAPP
             // 
             this.button4.Location = new System.Drawing.Point(539, 55);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 23);
+            this.button4.Size = new System.Drawing.Size(248, 23);
             this.button4.TabIndex = 23;
-            this.button4.Text = "PCのプロセス確認";
+            this.button4.Text = "PCのプロセス確認(From jeanne.wankuma.com)";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -403,6 +416,55 @@ namespace YukiFormAPP
             this.label4.Size = new System.Drawing.Size(97, 12);
             this.label4.TabIndex = 25;
             this.label4.Text = "©By Hisaki Koike.";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(3, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "ファイルを開く";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // 名前を付けて保存
+            // 
+            this.名前を付けて保存.Location = new System.Drawing.Point(84, 3);
+            this.名前を付けて保存.Name = "名前を付けて保存";
+            this.名前を付けて保存.Size = new System.Drawing.Size(102, 23);
+            this.名前を付けて保存.TabIndex = 2;
+            this.名前を付けて保存.Text = "名前を付けて保存";
+            this.名前を付けて保存.UseVisualStyleBackColor = true;
+            this.名前を付けて保存.Click += new System.EventHandler(this.名前を付けて保存_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(84, 32);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(102, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "フォルダーの参照";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(7, 7);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(92, 23);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "プリント(未完成)";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(106, 7);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "しろしろ";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
@@ -437,6 +499,8 @@ namespace YukiFormAPP
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -478,6 +542,11 @@ namespace YukiFormAPP
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button 名前を付けて保存;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

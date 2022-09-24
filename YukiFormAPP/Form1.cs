@@ -55,7 +55,7 @@ namespace YukiFormAPP
 
         private void label1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("YukiAPP Test Ver 0.5." +
+            MessageBox.Show("YukiAPP Test Ver 0.6." +
                 "");
         }
 

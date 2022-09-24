@@ -32,17 +32,17 @@ namespace YukiFormAPP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Clock.exe");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Desktop", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Hisaki", new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("$HOME", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Clock.exe");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Desktop", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Hisaki", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("$HOME", new System.Windows.Forms.TreeNode[] {
+            treeNode7});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -85,6 +85,7 @@ namespace YukiFormAPP
             this.button10 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -94,6 +95,7 @@ namespace YukiFormAPP
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -210,21 +212,21 @@ namespace YukiFormAPP
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(3, 243);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 15;
             this.chart1.Text = "chart1";
-            title1.Name = "売上";
-            this.chart1.Titles.Add(title1);
+            title2.Name = "売上";
+            this.chart1.Titles.Add(title2);
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // Memo
@@ -247,16 +249,16 @@ namespace YukiFormAPP
             // 
             this.treeView1.Location = new System.Drawing.Point(212, 68);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "ノード11";
-            treeNode1.Text = "Clock.exe";
-            treeNode2.Name = "ノード8";
-            treeNode2.Text = "Desktop";
-            treeNode3.Name = "ノード7";
-            treeNode3.Text = "Hisaki";
-            treeNode4.Name = "ノード0";
-            treeNode4.Text = "$HOME";
+            treeNode5.Name = "ノード11";
+            treeNode5.Text = "Clock.exe";
+            treeNode6.Name = "ノード8";
+            treeNode6.Text = "Desktop";
+            treeNode7.Name = "ノード7";
+            treeNode7.Text = "Hisaki";
+            treeNode8.Name = "ノード0";
+            treeNode8.Text = "$HOME";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(121, 97);
             this.treeView1.TabIndex = 18;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -483,7 +485,7 @@ namespace YukiFormAPP
             "Windows8",
             "Windowws10",
             "Windows11"});
-            this.checkedListBox1.Location = new System.Drawing.Point(1078, 678);
+            this.checkedListBox1.Location = new System.Drawing.Point(37, 15);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 88);
             this.checkedListBox1.TabIndex = 26;
@@ -528,16 +530,26 @@ namespace YukiFormAPP
             // 
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkedListBox1);
+            this.groupBox2.Location = new System.Drawing.Point(998, 657);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 118);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "OS";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 772);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button4);
@@ -572,6 +584,7 @@ namespace YukiFormAPP
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,6 +633,7 @@ namespace YukiFormAPP
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

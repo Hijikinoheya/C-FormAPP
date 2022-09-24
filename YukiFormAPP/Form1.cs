@@ -512,5 +512,10 @@ namespace YukiFormAPP
                 }
             }
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test app.");
+        }
     }
 }

@@ -11,6 +11,11 @@ using System;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System;
+ 
+// System.Management.dllの参照が必要
+using System.Management;
+ 
 
 
 namespace YukiFormAPP
@@ -386,6 +391,126 @@ namespace YukiFormAPP
         {
 
 
+        }
+
+        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            // Win32_OperatingSystemクラスを作成する
+            using (ManagementClass managementClass = new ManagementClass("Win32_OperatingSystem"))
+            {
+                // Win32_OperatingSystemオブジェクトを取得する
+                managementClass.Get();
+                // 権限を有効化する
+                managementClass.Scope.Options.EnablePrivileges = true;
+
+                // WMIのオブジェクトのコレクションを取得する
+                using (ManagementObjectCollection managementObjectCollection = managementClass.GetInstances())
+                {
+                    // WMIのオブジェクトを列挙する
+                    foreach (ManagementObject managementObject in managementObjectCollection)
+                    {
+                        // OSの名前
+                        Console.WriteLine($"Name: {managementObject["Name"]}");
+                        // OSの簡単な説明
+                        Console.WriteLine($"Caption: {managementObject["Caption"]}");
+                        // OSの説明（コンピュータの説明）
+                        Console.WriteLine($"Description: {managementObject["Description"]}");
+                        // OSのバージョン
+                        Console.WriteLine($"Version: {managementObject["Version"]}");
+                        // OSのビルド番号
+                        Console.WriteLine($"BuildNumber: {managementObject["BuildNumber"]}");
+                        // OSの製造元の名前
+                        Console.WriteLine($"Manufacturer: {managementObject["Manufacturer"]}");
+                        // OSの言語識別子（言語ID）
+                        Console.WriteLine($"Locale: {managementObject["Locale"]}");
+                        // OSの言語
+                        Console.WriteLine($"OSLanguage: {managementObject["OSLanguage"]}");
+                        // シリアルナンバー
+                        Console.WriteLine($"SerialNumber: {managementObject["SerialNumber"]}");
+                        // 製品の種類（1: ワークステーション、2: ドメインコントローラー, 3: サーバー）
+                        Console.WriteLine($"ProductType: {managementObject["ProductType"]}");
+                        // OSのアーキテクチャ（32ビット or 64 ビット）
+                        Console.WriteLine($"OSArchitecture: {managementObject["ProductType"]}");
+                        // OSがインストールされた日時
+                        Console.WriteLine($"InstallDate: {managementObject["InstallDate"]}");
+                        // OSが最後に起動された日時
+                        Console.WriteLine($"LastBootUpTime: {managementObject["LastBootUpTime"]}");
+                        // OSがインストールされているデバイス（物理ディスク／パーティション）
+                        Console.WriteLine($"SystemDevice: {managementObject["SystemDevice"]}");
+                        // OSが起動するデバイス（ディスクドライブ）
+                        Console.WriteLine($"BootDevice: {managementObject["BootDevice"]}");
+                        // システムドライブ
+                        Console.WriteLine($"SystemDrive: {managementObject["SystemDrive"]}");
+                        // Windowsディレクトリ
+                        Console.WriteLine($"WindowsDirectory: {managementObject["WindowsDirectory"]}");
+
+                        // WMIのオブジェクトのリソースを開放する
+                        managementObject.Dispose();
+                    }
+                }
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Win32_OperatingSystemクラスを作成する
+            using (ManagementClass managementClass = new ManagementClass("Win32_OperatingSystem"))
+            {
+                // Win32_OperatingSystemオブジェクトを取得する
+                managementClass.Get();
+                // 権限を有効化する
+                managementClass.Scope.Options.EnablePrivileges = true;
+
+                // WMIのオブジェクトのコレクションを取得する
+                using (ManagementObjectCollection managementObjectCollection = managementClass.GetInstances())
+                {
+                    // WMIのオブジェクトを列挙する
+                    foreach (ManagementObject managementObject in managementObjectCollection)
+                    {
+
+                        // OSの名前
+                        Console.WriteLine($"Name: {managementObject["Name"]}");
+                        // OSの簡単な説明
+                        Console.WriteLine($"Caption: {managementObject["Caption"]}");
+                        // OSの説明（コンピュータの説明）
+                        Console.WriteLine($"Description: {managementObject["Description"]}");
+                        // OSのバージョン
+                        Console.WriteLine($"Version: {managementObject["Version"]}");
+                        // OSのビルド番号
+                        Console.WriteLine($"BuildNumber: {managementObject["BuildNumber"]}");
+                        // OSの製造元の名前
+                        Console.WriteLine($"Manufacturer: {managementObject["Manufacturer"]}");
+                        // OSの言語識別子（言語ID）
+                        Console.WriteLine($"Locale: {managementObject["Locale"]}");
+                        // OSの言語
+                        Console.WriteLine($"OSLanguage: {managementObject["OSLanguage"]}");
+                        // シリアルナンバー
+                        Console.WriteLine($"SerialNumber: {managementObject["SerialNumber"]}");
+                        // 製品の種類（1: ワークステーション、2: ドメインコントローラー, 3: サーバー）
+                        Console.WriteLine($"ProductType: {managementObject["ProductType"]}");
+                        // OSのアーキテクチャ（32ビット or 64 ビット）
+                        Console.WriteLine($"OSArchitecture: {managementObject["ProductType"]}");
+                        // OSがインストールされた日時
+                        Console.WriteLine($"InstallDate: {managementObject["InstallDate"]}");
+                        // OSが最後に起動された日時
+                        Console.WriteLine($"LastBootUpTime: {managementObject["LastBootUpTime"]}");
+                        // OSがインストールされているデバイス（物理ディスク／パーティション）
+                        Console.WriteLine($"SystemDevice: {managementObject["SystemDevice"]}");
+                        // OSが起動するデバイス（ディスクドライブ）
+                        Console.WriteLine($"BootDevice: {managementObject["BootDevice"]}");
+                        // システムドライブ
+                        Console.WriteLine($"SystemDrive: {managementObject["SystemDrive"]}");
+                        // Windowsディレクトリ
+                        Console.WriteLine($"WindowsDirectory: {managementObject["WindowsDirectory"]}");
+
+                        // WMIのオブジェクトのリソースを開放する
+                        managementObject.Dispose();
+
+                        
+                    }
+
+                }
+            }
         }
     }
 }

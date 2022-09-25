@@ -101,17 +101,24 @@ namespace YukiFormAPP
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.yuki.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -385,6 +392,7 @@ namespace YukiFormAPP
             // 
             // yuki
             // 
+            this.yuki.Controls.Add(this.splitContainer2);
             this.yuki.Location = new System.Drawing.Point(4, 22);
             this.yuki.Name = "yuki";
             this.yuki.Padding = new System.Windows.Forms.Padding(3);
@@ -614,6 +622,20 @@ namespace YukiFormAPP
             this.richTextBox1.TabIndex = 32;
             this.richTextBox1.Text = "TextBox";
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Size = new System.Drawing.Size(186, 68);
+            this.splitContainer2.SplitterDistance = 62;
+            this.splitContainer2.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -651,7 +673,6 @@ namespace YukiFormAPP
             this.Controls.Add(this.button1);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -660,12 +681,16 @@ namespace YukiFormAPP
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.yuki.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.t)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -723,6 +748,9 @@ namespace YukiFormAPP
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 

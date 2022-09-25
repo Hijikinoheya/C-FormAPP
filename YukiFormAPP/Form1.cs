@@ -61,7 +61,7 @@ namespace YukiFormAPP
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Hisaki714/FormAPP-Test-");
+            System.Diagnostics.Process.Start("https://github.com/Hisaki714/C-FormAPP");
         }
 
         private void progressBar1_Click(object sender, EventArgs e)

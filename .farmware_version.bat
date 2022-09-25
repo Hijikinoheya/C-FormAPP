@@ -70,4 +70,4 @@ REM -------------------------------------------------
             echo .NET Frameworkƒo[ƒWƒ‡ƒ“ !result!
     )
 
-exit /b
+exit /b0411

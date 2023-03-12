@@ -114,6 +114,7 @@ namespace YukiFormAPP
                 //MessageBox.Show("負担中...");
                 if (count == 8)
                 {
+                    MessageBox.Show("負担中...");
                     // ループを抜ける
                     break;
                 }

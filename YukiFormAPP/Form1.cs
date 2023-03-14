@@ -7,15 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System;
 using System.Threading;
-using System.Windows.Forms;
 using System.Diagnostics;
-using System;
  
 // System.Management.dllの参照が必要
 using System.Management;
- 
+
 
 
 namespace YukiFormAPP
@@ -50,7 +47,9 @@ namespace YukiFormAPP
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.Text = Application.ProductName;
+            timer1.Interval = 1000;
+            timer1.Enabled = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -131,10 +130,6 @@ namespace YukiFormAPP
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hello.");
-        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -143,12 +138,12 @@ namespace YukiFormAPP
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+            MessageBox.Show("Hello.");
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-                    }
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -454,69 +449,145 @@ namespace YukiFormAPP
 
         private void button10_Click(object sender, EventArgs e)
         {
-            // Win32_OperatingSystemクラスを作成する
-            using (ManagementClass managementClass = new ManagementClass("Win32_OperatingSystem"))
-            {
-                // Win32_OperatingSystemオブジェクトを取得する
-                managementClass.Get();
-                // 権限を有効化する
-                managementClass.Scope.Options.EnablePrivileges = true;
+            //OSの情報を取得する
+            System.OperatingSystem os = System.Environment.OSVersion;
 
-                // WMIのオブジェクトのコレクションを取得する
-                using (ManagementObjectCollection managementObjectCollection = managementClass.GetInstances())
-                {
-                    // WMIのオブジェクトを列挙する
-                    foreach (ManagementObject managementObject in managementObjectCollection)
-                    {
+            //OSの情報を表示する
+            Console.WriteLine(os.ToString());
+            //Windows 8.1では、「Microsoft Windows NT 6.2.9200.0」
 
-                        // OSの名前
-                        Console.WriteLine($"Name: {managementObject["Name"]}");
-                        // OSの簡単な説明
-                        Console.WriteLine($"Caption: {managementObject["Caption"]}");
-                        // OSの説明（コンピュータの説明）
-                        Console.WriteLine($"Description: {managementObject["Description"]}");
-                        // OSのバージョン
-                        Console.WriteLine($"Version: {managementObject["Version"]}");
-                        // OSのビルド番号
-                        Console.WriteLine($"BuildNumber: {managementObject["BuildNumber"]}");
-                        // OSの製造元の名前
-                        Console.WriteLine($"Manufacturer: {managementObject["Manufacturer"]}");
-                        // OSの言語識別子（言語ID）
-                        Console.WriteLine($"Locale: {managementObject["Locale"]}");
-                        // OSの言語
-                        Console.WriteLine($"OSLanguage: {managementObject["OSLanguage"]}");
-                        // シリアルナンバー
-                        Console.WriteLine($"SerialNumber: {managementObject["SerialNumber"]}");
-                        // 製品の種類（1: ワークステーション、2: ドメインコントローラー, 3: サーバー）
-                        Console.WriteLine($"ProductType: {managementObject["ProductType"]}");
-                        // OSのアーキテクチャ（32ビット or 64 ビット）
-                        Console.WriteLine($"OSArchitecture: {managementObject["ProductType"]}");
-                        // OSがインストールされた日時
-                        Console.WriteLine($"InstallDate: {managementObject["InstallDate"]}");
-                        // OSが最後に起動された日時
-                        Console.WriteLine($"LastBootUpTime: {managementObject["LastBootUpTime"]}");
-                        // OSがインストールされているデバイス（物理ディスク／パーティション）
-                        Console.WriteLine($"SystemDevice: {managementObject["SystemDevice"]}");
-                        // OSが起動するデバイス（ディスクドライブ）
-                        Console.WriteLine($"BootDevice: {managementObject["BootDevice"]}");
-                        // システムドライブ
-                        Console.WriteLine($"SystemDrive: {managementObject["SystemDrive"]}");
-                        // Windowsディレクトリ
-                        Console.WriteLine($"WindowsDirectory: {managementObject["WindowsDirectory"]}");
+            //次のようにしても同じ（.NET Framework 2.0以降）
+            Console.WriteLine(os.VersionString);
 
-                        // WMIのオブジェクトのリソースを開放する
-                        managementObject.Dispose();
+            //OSのバージョンを表示する
+            Console.WriteLine(os.Version.ToString());
+            //Windows 8では、「6.2.9200.0」
 
-                        
-                    }
+            //OSの各バージョン情報を表示する
+            //OSのPlatformIDを表示する
+            Console.WriteLine(os.Platform);
+            //Windows 8では、「Win32NT」
 
-                }
-            }
+            //OSのメジャーバージョン番号を表示する
+            Console.WriteLine(os.Version.Major);
+            //Windows 8では、「6」
+
+            //OSのマイナーバージョン番号を表示する
+            Console.WriteLine(os.Version.Minor);
+            //Windows 8では、「2」
+
+            //OSのビルド番号を表示する
+            Console.WriteLine(os.Version.Build);
+            //Windows 8では、「9200」
+
+            //OSのリビジョン番号を表示する
+            Console.WriteLine(os.Version.Revision);
+            //Windows 8では、「0」
+
+            //OSのサービスパックのバージョンを表示する（.NET Framework 2.0以降）
+            Console.WriteLine(os.ServicePack);
+            //Windows 8では、空の文字列
+
+            //OSのメジャーリビジョン番号を表示する（.NET Framework 2.0以降）
+            Console.WriteLine(os.Version.MajorRevision);
+            //Windows 8では、「0」
+
+            //OSのマイナーリビジョン番号を表示する（.NET Framework 2.0以降）
+            Console.WriteLine(os.Version.MinorRevision);
+            //Windows 8では、「0」
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show("Test app.");
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("パスワードを送信しますか？",
+            "質問",
+            MessageBoxButtons.YesNoCancel,
+            MessageBoxIcon.Exclamation,
+            MessageBoxDefaultButton.Button2);
+
+            //何が選択されたか調べる
+            if (result == DialogResult.Yes)
+            {
+                //「はい」が選択された時
+                MessageBox.Show("送信しました。");
+            }
+            else if (result == DialogResult.No)
+            {
+                //「いいえ」が選択された時
+                MessageBox.Show("キャンセルしました");
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                //「キャンセル」が選択された時
+                MessageBox.Show("キャンセルしました");
+            }
+        }
+        //using System.Drawing;
+
+        //Button1のClickイベントハンドラ
+        private void Button11_Click(object sender, System.EventArgs e)
+        {
+            //PrintDocumentオブジェクトの作成
+            System.Drawing.Printing.PrintDocument pd =
+                new System.Drawing.Printing.PrintDocument();
+            //PrintPageイベントハンドラの追加
+            pd.PrintPage +=
+                new System.Drawing.Printing.PrintPageEventHandler(pd_PrintPage);
+            //印刷を開始する
+            pd.Print();
+        }
+
+        private void pd_PrintPage(object sender,
+            System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //画像を読み込む
+            Image img = Image.FromFile("test.bmp");
+            //画像を描画する
+            e.Graphics.DrawImage(img, e.MarginBounds);
+            //次のページがないことを通知する
+            e.HasMorePages = false;
+            //後始末をする
+            img.Dispose();
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            //PrintDocumentオブジェクトの作成
+            System.Drawing.Printing.PrintDocument pd =
+                new System.Drawing.Printing.PrintDocument();
+            //PrintPageイベントハンドラの追加
+            pd.PrintPage +=
+                new System.Drawing.Printing.PrintPageEventHandler(pd_PrintPage);
+            //印刷を開始する
+            pd.Print();
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            DateTime d = DateTime.Now;
+            label1.Text = string.Format("{0:00}:{1:00}:{2:00}", d.Hour, d.Minute, d.Second);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
